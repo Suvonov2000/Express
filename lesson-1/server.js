@@ -3,22 +3,31 @@ import { config } from "dotenv";
 
 config();
 
-const app = express();
-app.use(express.json());
+// const app = express();
+// app.use(express.json());
 
 // app.get("/", (req, res) => {
 //   res.status(200).send("Express is successfully installed!");
 // });
 
+const app = express();
+app.use(express.json());
+
 app.post("/", (req, res) => {
-  const { name, surname } = req.body;
+  const { name, surname, age } = req.body;
   console.log(req.body);
 
-  res.send(`Heloo:${name} ${surname}`);
+  res.send(`Hi i am ${name} ${surname} ${age}`);
 });
 
-const PORT = process.env.PORT || 2000;
+app.put("/", (req, res) => {
+  const { name, surname, age } = req.body;
+
+  res.send(`This is ${name} ${surname} ${age}`);
+});
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}, http://localhost:${PORT}`);
+  console.log(`Server is runing on port http://localhost:${PORT}`);
 });
