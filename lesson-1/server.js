@@ -6,12 +6,12 @@ config();
 // const app = express();
 // app.use(express.json());
 
-// app.get("/", (req, res) => {
-//   res.status(200).send("Express is successfully installed!");
-// });
-
 const app = express();
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.status(200).send("Express is successfully installed!");
+});
 
 app.post("/", (req, res) => {
   const { name, surname, age } = req.body;
@@ -22,6 +22,7 @@ app.post("/", (req, res) => {
 
 app.put("/", (req, res) => {
   const { name, surname, age } = req.body;
+  console.log(req.body);
 
   res.send(`This is ${name} ${surname} ${age}`);
 });
