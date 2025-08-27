@@ -27,6 +27,10 @@ app.put("/", (req, res) => {
   res.send(`This is ${name} ${surname} ${age}`);
 });
 
+app.delete("/", (req, res) => {
+  res.status(200).send("Deletion is working ok !");
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
