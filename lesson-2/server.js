@@ -1,18 +1,16 @@
 import express from "express";
+import { config } from "dotenv";
+import user_router from "./user.js";
+import post_router from "./post.js";
+config();
 
 const app = express();
+app.use(express.json());
 
-app.get("/user/:id", (req, res) => {
-  const userID = req.params.id;
-  res.send(`USer ID is ${userID}`);
-});
+app.use("/api/users/", user_router);
+app.use("/api/posts/", post_router);
 
-app.get("/search", (req, res) => {
-  const { term, page } = req.query;
-  res.send(`Searching for "${term} on page${page}`);
-});
-const PORT = process.env.PORT || 1000;
-
+const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {
-  console.log(`Server is runing on port http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT},http://localhost:${PORT}`);
 });
