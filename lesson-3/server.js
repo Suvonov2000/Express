@@ -19,6 +19,12 @@ app.get("/blog", blogMiddleware, (req, res) => {
   res.send(`Blogs-> ${count}`);
 });
 
+let count_news = 0;
+app.get("/news", (req, res) => {
+  count_news++;
+  res.send(`News -> ${count_news}`);
+});
+
 const PORT = process.env || 2020;
 console.log(process.env.PORT);
 
