@@ -30,9 +30,10 @@ app.get("/hello", (req, res) => {
 });
 
 app.get("/error", (req, res) => {
-  const err = new Error("Intentional error.");
-  err.status = 500;
-  next(err);
+  // const err = new Error("Intentional error.");
+  // err.status = 500;
+  // next(err);
+  throw new Error("Intentional error");
 });
 
 app.use((err, req, res, next) => {
