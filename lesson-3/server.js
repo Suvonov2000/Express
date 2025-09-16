@@ -25,6 +25,12 @@ app.get("/news", (req, res) => {
   res.send(`News -> ${count_news}`);
 });
 
+let count_xabar = 0;
+app.get("/xabar", (req, res) => {
+  count_xabar++;
+  res.send(`News -> ${count_xabar}`);
+});
+
 app.get("/hello", (req, res) => {
   res.send("Hello world!");
 });
