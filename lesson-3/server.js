@@ -35,6 +35,10 @@ app.get("/get", (req, res) => {
   res.send("Hello world!");
 });
 
+app.get("/blog", (req, res) => {
+  res.send("Hello world i am blog!");
+});
+
 app.get("/error", (req, res) => {
   const err = new Error("Intentional error.");
   err.status = 500;
