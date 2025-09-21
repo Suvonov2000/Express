@@ -4,7 +4,7 @@ const app = express();
 
 app.get("/user/:id", (req, res) => {
   const userID = req.params.id;
-  res.send(`USer ID is ${userID}`);
+  res.send(`User ID is ${userID}`);
 });
 
 app.get("/search", (req, res) => {
