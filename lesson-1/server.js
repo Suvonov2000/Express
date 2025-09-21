@@ -17,7 +17,7 @@ app.post("/", (req, res) => {
   const { name, surname, age } = req.body;
   console.log(req.body);
 
-  res.send(`Hi i am ${name} ${surname} ${age}`);
+  res.send(`Hi: i am ${name} ${surname} ${age}`);
 });
 
 app.put("/", (req, res) => {
